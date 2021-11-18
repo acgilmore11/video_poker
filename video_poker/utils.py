@@ -1,9 +1,13 @@
 from pygame.image import load
 import pygame as pg
+import os
 
+BASE = os.path.dirname(os.path.abspath(__file__))
 #may have to change path
 def load_sprite(name, with_alpha=True):
-    path = f"C:/Users/acgfo/PycharmProjects/video_poker/assets/media/{name}.png"
+    #path = f"C:/Users/acgfo/PycharmProjects/video_poker/assets/media/{name}.png"
+    path = os.path.join(BASE, 'assets', 'media', name + '.png')
+    print(BASE)
     loaded_sprite = load(path)
 
     if with_alpha:
@@ -13,7 +17,8 @@ def load_sprite(name, with_alpha=True):
 
 #may have to change path
 def load_font(name, size):
-    path = f"C:/Users/acgfo/PycharmProjects/video_poker/assets/media/{name}.ttf"
+    #path = f"C:/Users/acgfo/PycharmProjects/video_poker/assets/media/{name}.ttf"
+    path = os.path.join(BASE, 'assets', 'media', name + '.ttf')
     return pg.font.Font(path, size)
 
 def rank_to_num(rank):
