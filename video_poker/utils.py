@@ -3,9 +3,8 @@ import pygame as pg
 import os
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-#may have to change path
+
 def load_sprite(name, with_alpha=True):
-    #path = f"C:/Users/acgfo/PycharmProjects/video_poker/assets/media/{name}.png"
     path = os.path.join(BASE, 'assets', 'media', name + '.png')
     print(BASE)
     loaded_sprite = load(path)
@@ -15,9 +14,7 @@ def load_sprite(name, with_alpha=True):
     else:
         return loaded_sprite.convert()
 
-#may have to change path
 def load_font(name, size):
-    #path = f"C:/Users/acgfo/PycharmProjects/video_poker/assets/media/{name}.ttf"
     path = os.path.join(BASE, 'assets', 'media', name + '.ttf')
     return pg.font.Font(path, size)
 
